@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_week14/main.dart';
+import 'package:flutter_week14/widgets/card_demo.dart';
 import 'package:flutter_week14/widgets/column_page.dart';
 import 'package:flutter_week14/widgets/list_viwe_menu.dart';
+import 'package:flutter_week14/widgets/my_card.dart';
 import 'package:flutter_week14/widgets/row_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,49 +28,80 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pushReplacement(
+              title: const Text('Home Page'),
+              onTap: () async {
+                await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const HomePage(),
                   ),
                 );
+                debugPrint("Home Page");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.apps),
+              leading: const Icon(Icons.access_time),
               title: const Text('Row'),
-              onTap: () {
-                Navigator.pushReplacement(
+              onTap: () async {
+                await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const RowPage(),
                   ),
                 );
+                debugPrint("Row");
               },
             ),
             ListTile(
               leading: const Icon(Icons.apps),
               title: const Text('Column'),
-              onTap: () {
-                Navigator.pushReplacement(
+              onTap: () async{
+                await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ColumnPage(),
                   ),
                 );
+                debugPrint("Column");
               },
-            ),ListTile(
+            ),
+            ListTile(
               leading: const Icon(Icons.person),
               title: const Text('List Viwe Widget'),
-              onTap: () {
-                Navigator.pushReplacement(
+              onTap: () async{
+                await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ListViweMenu(),
                   ),
                 );
+                debugPrint("List Viwe Widget");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.abc_sharp),
+              title: const Text('Dart Viwe and Inkwell Widget'),
+              onTap: () async{
+                await Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CardDemo(),
+                  ),
+                );
+                debugPrint("Dart Viwe and Inkwell Widget");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.merge_type),
+              title: const Text('My Card'),
+              onTap: () async {
+                await Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MyCard(),
+                  ),
+                );
+                debugPrint("Home Page");
               },
             ),
           ],
